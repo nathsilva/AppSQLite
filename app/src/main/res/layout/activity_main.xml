@@ -8,39 +8,79 @@
     tools:context=".MainActivity">
 
     <EditText
+        android:id="@+id/idNome"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="20dp"
+        android:hint="Nome"
+        android:inputType="textPersonName"
+        android:padding="1dp"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/idCpf"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="20dp"
+        android:hint="CPF"
+        android:inputType="number"
+        android:padding="1dp"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/idRg"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="20dp"
+        android:hint="RG"
+        android:inputType="number"
+        android:padding="1dp"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/idTelefone"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="20dp"
+        android:hint="Telefone"
+        android:inputType="phone"
+        android:padding="1dp"
+        android:textSize="25dp" />
+
+    <EditText
         android:id="@+id/idEmail"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_margin="20dp"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:padding="10dp"
-        android:textSize="30dp" />
+        android:padding="1dp"
+        android:textSize="25dp" />
 
     <EditText
         android:id="@+id/idSenha"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_margin="20dp"
         android:hint="Senha"
         android:inputType="textPassword"
-        android:padding="10dp"
-        android:textSize="30dp" />
+        android:padding="1dp"
+        android:textSize="25dp" />
 
     <EditText
         android:id="@+id/idConfirmaSenha"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_margin="20dp"
         android:hint="Confirmar senha"
         android:inputType="textPassword"
-        android:padding="10dp"
-        android:textSize="30dp" />
+        android:padding="1dp"
+        android:textSize="25dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="15dp"
         android:orientation="horizontal">
 
         <Button
@@ -51,7 +91,7 @@
             android:layout_margin="20dp"
             android:padding="10dp"
             android:text="Registrar"
-            android:textSize="30dp" />
+            android:textSize="25dp" />
 
         <Button
             android:id="@+id/idBtnLogin"
@@ -61,7 +101,7 @@
             android:layout_margin="20dp"
             android:padding="10dp"
             android:text="Login"
-            android:textSize="30dp" />
+            android:textSize="25dp" />
     </LinearLayout>
 
 </LinearLayout>

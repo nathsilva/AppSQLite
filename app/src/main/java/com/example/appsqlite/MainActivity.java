@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     DatabaseHelper db;
 
-    EditText txtEmail, txtSenha, txtConfirmaSenha;
+    EditText txtNome, txtCpf, txtRg, txtTelefone, txtEmail, txtSenha, txtConfirmaSenha;
     Button btnRegistar, btnLogin;
 
 
@@ -24,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
 
         db = new DatabaseHelper(this);
 
+        txtNome = findViewById(R.id.idNome);
+        txtCpf = findViewById(R.id.idCpf);
+        txtRg = findViewById(R.id.idRg);
+        txtTelefone = findViewById(R.id.idTelefone);
         txtEmail = findViewById(R.id.idEmail);
         txtSenha = findViewById(R.id.idSenha);
         txtConfirmaSenha = findViewById(R.id.idConfirmaSenha);
@@ -43,13 +47,17 @@ public class MainActivity extends AppCompatActivity {
         btnRegistar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email, senha, confirmaSenha;
+                String nome, cpf, rg, telefone, email, senha, confirmaSenha;
 
+                nome = txtNome.getText().toString();
+                cpf = txtRg.getText().toString();
+                rg = txtRg.getText().toString();
+                telefone = txtTelefone.getText().toString();
                 email = txtEmail.getText().toString();
                 senha = txtSenha.getText().toString();
                 confirmaSenha = txtConfirmaSenha.getText().toString();
 
-                if (email.equals("") || senha.equals("") || confirmaSenha.equals("")) {
+                if (nome.equals("") ||cpf.equals("") ||rg.equals("") ||telefone.equals("") ||email.equals("") || senha.equals("") || confirmaSenha.equals("")) {
                     Toast.makeText(getApplicationContext(), "Favor inserir valores!!", Toast.LENGTH_SHORT).show();
                 } else {
                     if (senha.equals(confirmaSenha)) {

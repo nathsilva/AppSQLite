@@ -20,7 +20,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("drop table if exists tbUsuario");
+        //db.execSQL("drop table if exists tbUsuario");
     }
     //inserindo valores no banco de dados
 
@@ -54,9 +54,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //Verificando usuário e senha
 
-    public Boolean checarEmailSenha(String email, String senha) {
+    public Boolean checarCpfSenha(String cpf, String senha) {
         SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery("select * from tbUsuario where email = ? and senha = ?", new String[]{email, senha});
+        Cursor cursor = db.rawQuery("select * from tbUsuario where cpf = ? and senha = ?", new String[]{cpf, senha});
         if (cursor.getCount() > 0) {
             return true;
         } else {
@@ -64,4 +64,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 
     }
+
+
 }
