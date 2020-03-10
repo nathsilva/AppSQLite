@@ -15,7 +15,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table tbUsuario(email text primary key, senha text)");
+        db.execSQL("create table tbUsuario(cpf text primary key, senha text)");
     }
 
     @Override
@@ -24,11 +24,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     //inserindo valores no banco de dados
 
-    public boolean insert(String email, String senha) {
+    public boolean insert(String cpf, String senha) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues contentValues = new ContentValues();
-        contentValues.put("email", email);
+        contentValues.put("cpf", cpf);
         contentValues.put("senha", senha);
 
         long inserido = db.insert("tbUsuario", null, contentValues);
@@ -40,10 +40,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Boolean validarEmail(String email) {
+    public Boolean validarCpf(String cpf) {
         SQLiteDatabase db = getReadableDatabase();
 
-        Cursor cursor = db.rawQuery("select * from tbUsuario where email = ?", new String[]{email});
+        Cursor cursor = db.rawQuery("select * from tbUsuario where cpf = ?", new String[]{cpf});
         if (cursor.getCount() > 0) {
             return false;
         } else {

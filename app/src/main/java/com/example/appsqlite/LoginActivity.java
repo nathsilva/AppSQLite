@@ -40,8 +40,8 @@ public class LoginActivity extends AppCompatActivity {
                 Boolean checarCpfSenha = db.checarCpfSenha(cpf,senha);
 
                 if (checarCpfSenha==true){
-                    Log.i("btnLoginEntar","Cliquei no botão entrar do login");
-                  //  Toast.makeText(getApplicationContext(),"Acesso autorizado!!!", Toast.LENGTH_SHORT).toString();
+                    Log.i("btnLoginEntrar","Cliquei no botão entrar do login");
+                  Toast.makeText(getApplicationContext(),"Acesso autorizado!!!", Toast.LENGTH_SHORT).toString();
                     Intent intent = new Intent(getApplicationContext(),MenuPrincipalActivity.class);
                     startActivity(intent);
                 }

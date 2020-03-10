@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 String nome, cpf, rg, telefone, email, senha, confirmaSenha;
 
                 nome = txtNome.getText().toString();
-                cpf = txtRg.getText().toString();
+                cpf = txtCpf.getText().toString();
                 rg = txtRg.getText().toString();
                 telefone = txtTelefone.getText().toString();
                 email = txtEmail.getText().toString();
@@ -61,14 +61,14 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Favor inserir valores!!", Toast.LENGTH_SHORT).show();
                 } else {
                     if (senha.equals(confirmaSenha)) {
-                        Boolean checharEmail = db.validarEmail(email);
-                        if (checharEmail == true) {
-                            Boolean inserir = db.insert(email, senha);
+                        Boolean checharCpf = db.validarCpf(cpf);
+                        if (checharCpf == true) {
+                            Boolean inserir = db.insert(cpf, senha);
                             if (inserir == true) {
                                 Toast.makeText(getApplicationContext(), "Registro inserido com sucesso!!!", Toast.LENGTH_SHORT).show();
                             }
                         } else {
-                            Toast.makeText(getApplicationContext(), "Email inserido já existe!!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "CPF inserido já existe!!", Toast.LENGTH_SHORT).show();
                         }
 
                     } else {
